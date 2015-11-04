@@ -1,0 +1,19 @@
+<br>
+<br>
+<br>
+<br>
+<h1> Team Details </h1>
+<br>
+<hr>
+
+
+<p>
+ Team Name: <%= @team.name %>
+</p>
+
+<p>
+ Current Division: <%= @team.division %>
+</p>
+
+<%= link_to "Show Player Roster", team_players_path(@team) %> |
+<%= link_to "All Teams", teams_path %>

@@ -1,0 +1,33 @@
+<br>
+<br>
+<br>
+<h1> Teams </h1>
+<br>
+<hr>
+
+<table>
+
+ <thead>
+  <tr>
+   <th> Team </th>
+   <th> Division </th>
+   <th colspan = "2"></th> 
+  </tr>
+ </thead>
+
+ <tbody>
+  <% @teams.each do |cur_team| %>
+   <tr>
+    <td> <%= cur_team.name  %> </td>
+    <td> <%= cur_team.division %> </td>
+    <td> <%= cur_team.picture %> </td>
+    <td> <%= link_to 'Show', cur_team %> </td>
+    <td> <%= link_to 'Edit', edit_team_path(cur_team) %> </td>
+    <td> <%= link_to 'Delete', cur_team, method: :delete, data: { confirm: "Are you sure you want to delete the team #{cur_team.name}?" } %> </td>
+   </tr>
+  <% end %>
+ </tbody>
+
+</table>
+
+<%= link_to "Add a new Team", controller: "teams", action: "new" %>
